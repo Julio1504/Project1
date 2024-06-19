@@ -53,5 +53,17 @@ public class UserController {
         serviceRegistro.deleteRegister(id);
         return "redirect:/lista";
 }
+    @GetMapping("/registro/edit/{id}")
+    public String showEditForm(@PathVariable("id") Long id, Model model) {
+        Registro registro = serviceRegistro.getRegisterById(id);
+        model.addAttribute("registro", registro);
+        return "pages/editRegistro"; // Nombre de la vista del formulario de edición
+    }
 
+    @PostMapping("/registro/update/{id}")
+    public String updateRegister(@PathVariable("id") Long id, @ModelAttribute Registro registro) {
+        registro.setId(id); // Asegura que el ID esté establecido
+        serviceRegistro.updateRegister(registro);
+        return "redirect:/lista"; // Redirige a la lista de registros después de actualizar
+    }
 }

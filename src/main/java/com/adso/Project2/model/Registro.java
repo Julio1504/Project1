@@ -17,4 +17,5 @@ public class Registro {
     private String correo;
     private String contrasena;
     private String descripcion;
+
 }
