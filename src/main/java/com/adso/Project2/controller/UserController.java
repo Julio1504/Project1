@@ -48,5 +48,10 @@ public class UserController {
         return "pages/login";
     }
 
+    @GetMapping("/lista/{id}")
+    public String deleteRegister(@PathVariable Long id) {
+        serviceRegistro.deleteRegister(id);
+        return "redirect:/lista";
+}
 
 }

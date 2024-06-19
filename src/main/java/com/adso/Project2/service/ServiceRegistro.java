@@ -18,4 +18,7 @@ public class ServiceRegistro {
     public Registro saveRegister(Registro registro){
         return repositoryRegister.save(registro);
     }
+    public void deleteRegister(Long id) {
+        repositoryRegister.deleteById(id);
+    }
 }
