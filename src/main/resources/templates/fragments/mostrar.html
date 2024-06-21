@@ -4,32 +4,35 @@
     <meta charset="UTF-8">
     <script src="https://cdn.tailwindcss.com"></script>
     <script th:src="@{../static/js/tailwind.config.js}"></script>
+    <script src="https://kit.fontawesome.com/YOUR-KIT-ID.js" crossorigin="anonymous"></script>
     <title>Lista</title>
 </head>
 <body class="w-full h-[100vh] flex justify-center items-center">
 <article th:fragment="mostrar" class="w-full h-full flex-1 flex justify-center items-center" >
 
-    <table class="py-2 px-4 border-b-2 border-black border-solid">
+
+    <table class="py-2 px-4 border-b-2 border-black border-solid rounded-2xl shadow-2xl">
         <thead>
-        <th class="py-2 px-4 border-2 border-black border-solid bg-lime-300">Id</th>
-        <th class="py-2 px-4 border-2 border-black border-solid bg-lime-300">Nombre</th>
-        <th class="py-2 px-4 border-2 border-black border-solid bg-lime-300">Apellido</th>
-        <th class="py-2 px-4 border-2 border-black border-solid bg-lime-300">Correo</th>
-        <th class="py-2 px-4 border-2 border-black border-solid bg-lime-300">Contraseña</th>
-        <th class="py-2 px-4 border-2 border-black border-solid bg-lime-300">Descripcion</th>
+        <th class="py-2 px-4 border-2 border-black border-solid bg-[#C09F80] drop-shadow-2xl"><a href="/register/new"><img src="https://res.cloudinary.com/drycsmapp/image/upload/v1717675223/pdyetvdcam2dh3pklj2l.png" class="w-[30px] h-[30px]" alt=""></a></th>
+        <th class="py-2 px-4 border-2 border-black border-solid bg-[#C09F80] drop-shadow-2xl">Nombre</th>
+        <th class="py-2 px-4 border-2 border-black border-solid bg-[#C09F80] drop-shadow-2xl">Apellido</th>
+        <th class="py-2 px-4 border-2 border-black border-solid bg-[#C09F80] drop-shadow-2xl">Correo</th>
+        <th class="py-2 px-4 border-2 border-black border-solid bg-[#C09F80] drop-shadow-2xl">Contraseña</th>
+        <th class="py-2 px-4 border-2 border-black border-solid bg-[#C09F80] drop-shadow-2xl">Descripcion</th>
+        <th class="py-2 px-4 border-2 border-black border-solid bg-[#C09F80] drop-shadow-2xl">Botones</th>
         </thead>
 
         <tbody>
         <tr th:each="registro : ${result}"
             class="py-2 px-4 border-b-2 border-black border-solid">
-            <td class="text-center  border-2 border-black border-solid bg-lime-300" th:text="${registro.id}"></td>
-            <td class="text-center border-2 border-black border-solid" th:text="${registro.nombre}"></td>
-            <td class="text-center border-2 border-black border-solid" th:text="${registro.apellido}"></td>
-            <td class="text-center border-2 border-black border-solid" th:text="${registro.correo}"></td>
-            <td class="text-center border-2 border-black border-solid" th:text="${registro.contrasena}"></td>
-            <td class="text-center border-2 border-black border-solid" th:text="${registro.descripcion}"></td>
-            <td class="text-center border-2 border-black border-solid bg-red-700"><a th:href="@{/lista/{id}(id=${registro.id})}">Eliminar</a></td>
-            <td class="text-center border-2 border-black border-solid bg-green-700"><a th:href="@{/registro/edit/{id}(id=${registro.id})}">Editar</a></td>
+            <td class="text-center  border-2 border-black border-solid bg-[#C09F80]" th:text="${registro.id}"></td>  <!-- Propiedad del objeto registro-->
+            <td class="text-center border-2 border-black border-solid bg-white" th:text="${registro.nombre}"></td>
+            <td class="text-center border-2 border-black border-solid bg-white" th:text="${registro.apellido}"></td>
+            <td class="text-center border-2 border-black border-solid bg-white" th:text="${registro.correo}"></td>
+            <td class="text-center border-2 border-black border-solid bg-white" th:text="${registro.contrasena}"></td>
+            <td class="text-center border-2 border-black border-solid bg-white" th:text="${registro.descripcion}"></td>
+            <td class="text-center border-2 border-black border-solid bg-[#C09F80]"><a th:href="@{/registro/edit/{id}(id=${registro.id})}">Editar</a></td>
+            <td class="text-center border-2 border-black border-solid bg-[#76323F]"><a th:href="@{/lista/{id}(id=${registro.id})}"><img src="https://res.cloudinary.com/drycsmapp/image/upload/v1718921573/ubhazulqpm5dsjnxasz3.png" class="w-[20px] h-[20px]" alt=""></a></td>
         </tr>
 
         </tbody>

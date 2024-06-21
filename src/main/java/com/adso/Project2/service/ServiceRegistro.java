@@ -13,8 +13,9 @@ public class ServiceRegistro {
     private RepositoryRegistro repositoryRegister;
 
     public List<Registro> getAllRegistro(){
-        return repositoryRegister.findAll();
-    }
+        return repositoryRegister.findAll(); //Se utiliza para recuperar todas las instancias de una entidad especifica desde la base de datos
+    }//Obtiene los datos del repositorio
+
     public Registro saveRegister(Registro registro){
         return repositoryRegister.save(registro);
     }

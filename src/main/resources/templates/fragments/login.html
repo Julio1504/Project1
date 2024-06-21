@@ -20,21 +20,23 @@
         }
     </style>
     <section th:fragment="login" class="w-full h-full flex-1 flex justify-center items-center">
-        <form action="#" method="post" class="w-[60%] h-[65%] flex flex-col justify-evenly p-10 bg-zinc-200 rounded-2xl shadow-2xl">
-            <img src="https://res.cloudinary.com/drycsmapp/image/upload/v1717675223/pdyetvdcam2dh3pklj2l.png" alt="" class="w-[20%] h-[35%] mx-auto">
+        <form action="#" method="post"
+            class="w-[60%] h-[65%] flex flex-col justify-evenly p-10 bg-zinc-200 rounded-2xl shadow-2xl">
+            <img src="https://res.cloudinary.com/drycsmapp/image/upload/v1717675223/pdyetvdcam2dh3pklj2l.png" alt=""
+                class="w-[20%] h-[35%] mx-auto">
             <h1 class="text-zinc-1000 font-bold text-7xl flex justify-center">LOGIN</h1>
             <input type="email" placeholder="Correo"
                 class="rounded-md border-solid border-b-2 border-blue-700 p-2 outline-none focus:border-red-400 ease-in duration-300 placeholder:text-center">
             <input type="password" placeholder="Contraseña"
                 class="rounded-md border-solid border-b-2 border-blue-700 p-2 outline-none focus:border-red-400 ease-in duration-300 placeholder:text-center">
 
-                <label class="checkbox-btn mx-auto">
-                    <label for="checkbox">Términos y condiciones</label>
-                    <input id="checkbox" type="checkbox" class="">
-                    <span class="checkmark"></span>
-                </label>
+            <label class="checkbox-btn mx-auto">
+                <label for="checkbox">Términos y condiciones</label>
+                <input id="checkbox" type="checkbox" class="bg-black">
+                <span class="checkmark"></span>
+            </label>
             <input type="submit" value="LOGIN"
-                class="w-[70%] h-[10%] bg-blue-700 rounded-xl hover:bg-blue-400 ease-in duration-300 text-white mx-auto shadow-2xl">
+                class="w-[70%] h-[10%] bg-[#C09F80] rounded-xl hover:bg-[#D7CEC7] ease-in duration-300 text-white mx-auto shadow-2xl">
         </form>
     </section>
 </body>

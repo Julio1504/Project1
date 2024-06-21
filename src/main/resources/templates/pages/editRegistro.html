@@ -2,29 +2,48 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Editar Registro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script th:src="@{/js/tailwind.config.js}"></script>
 </head>
-<body>
-<section>
-<h1>Editar Registro</h1>
-<form th:action="@{/registro/update/{id}(id=${registro.id})}" th:object="${registro}" method="post">
-    <input type="hidden" th:field="*{id}"/>
-    <label for="nombre">Nombre:</label>
-    <input type="text" id="nombre" th:field="*{nombre}" />
-    <br/>
-    <label for="apellido">Apellido:</label>
-    <input type="text" id="apellido" th:field="*{apellido}" />
-    <br/>
-    <label for="correo">Correo:</label>
-    <input type="email" id="correo" th:field="*{correo}" />
-    <br/>
-    <label for="password">Contraseña:</label>
-    <input type="text" id="password" th:field="*{contrasena}" />
-    <br/>
-    <label for="descripcion">Descripción:</label>
-    <input type="text" id="descripcion" th:field="*{descripcion}" />
-    <br />
-    <button type="submit">Guardar</button>
-</form>
+<body class="bg-[#D7CEC7] h-screen flex items-center justify-center">
+
+<section class="w-full max-w-lg bg-white p-10 rounded-2xl shadow-2xl">
+    <h1 class="text-black font-bold text-3xl text-center drop-shadow-2xl mb-6">Editar Registro</h1>
+
+    <form th:action="@{/registro/update/{id}(id=${registro.id})}" th:object="${registro}" method="post" class="space-y-4">
+        <!--El $ nos dice que es un objeto y el * nos especifica que es una propiedad del objeto-->
+        <input type="hidden" th:field="*{id}"/>
+
+        <div>
+            <label for="nombre" class="block text-sm font-medium text-gray-700 text-center">Nombre:</label>
+            <input type="text" id="nombre" th:field="*{nombre}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50" />
+        </div>
+
+        <div>
+            <label for="apellido" class="block text-sm font-medium text-gray-700 text-center">Apellido:</label>
+            <input type="text" id="apellido" th:field="*{apellido}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50" />
+        </div>
+
+        <div>
+            <label for="correo" class="block text-sm font-medium text-gray-700 text-center">Correo:</label>
+            <input type="email" id="correo" th:field="*{correo}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50" />
+        </div>
+
+        <div>
+            <label for="password" class="block text-sm font-medium text-gray-700 text-center">Contraseña:</label>
+            <input type="text" id="password" th:field="*{contrasena}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50" />
+        </div>
+
+        <div>
+            <label for="descripcion" class="block text-sm font-medium text-gray-700 text-center">Descripción:</label>
+            <input type="text" id="descripcion" th:field="*{descripcion}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50" />
+        </div>
+
+        <div class="flex justify-center">
+            <button type="submit" class="w-full py-2 bg-blue-700 text-white rounded-xl hover:bg-blue-500 ease-in duration-300 shadow-2xl">Guardar</button>
+        </div>
+    </form>
 </section>
+
 </body>
 </html>

@@ -6,12 +6,11 @@
 </head>
 <body>
 
-<nav th:fragment="header" class="w-full h-[40px] p-2 bg-emerald-500">
+<nav th:fragment="header" class="w-full h-[40px] p-2 text-white bg-[#565656] shadow-2xl">
     <ul class="w-full h-full flex justify-around">
-        <li><a href="/">Inicio</a></li>
-        <li><a href="/lista">Mostrar</a></li>
-        <li><a href="/login">Inicio de Sesión</a></li>
-        <li>Contactos</li>
+        <li class="bg-[#C09F80] w-[70px] h-[26px] shadow-2xl rounded-2xl text-center"><a href="/lista">Inicio</a></li>
+        <li class="bg-[#C09F80] w-[90px] h-[26px] shadow-2xl rounded-2xl text-center"><a href="/register/new">Registrar</a></li>
+        <li class="bg-[#C09F80] w-[140px] h-[26px] shadow-2xl rounded-2xl text-center"><a href="/login">Inicio de Sesión</a></li>
     </ul>
 </nav>
 
